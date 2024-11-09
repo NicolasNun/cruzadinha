@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    background-size: 100%;
+    background-image: url(Captura\ de\ tela\ 2024-10-11\ 000024.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+header .container {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header .container .tittle {
+    font-size: 3rem;
+}
+
+header .container .btn_jogar {
+    border: 0;
+
+}
+
+.line{
+    display: flex;
+    gap: 2px;
+}
+
+#cruzadinha {
+    display: flex;
+    flex-direction: column;
+    gap: 2px
+}
+
+.block{
+    height: 32px;
+    width: 32px;
+    background-color: rgb(0, 162, 255);
+}
+
+.block.in {
+    border: 1px solid black;
+    background-color: white;
+}
