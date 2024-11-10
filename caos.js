@@ -29,16 +29,15 @@ function mostrarCruzadinha(matrix = [[]]){
         content += linhaGerada
     }
     cruzadinha.innerHTML = content
-    colocarEspacos(1)
+    colocarEspacos()
 }
 
-function colocarEspacos(gap) {
+function colocarEspacos() {
     for (let i = 0; i < resPosition.length; i++) {
         const res = resPosition[i];
         const orientacao = res[0];
-        // o +1 é para centralizar
-        const linhaInicial = res[1 + orientacao]+1;
-        const colunaInicial = res[2 - orientacao]+1;
+        const linhaInicial = res[1 + orientacao];
+        const colunaInicial = res[2 - orientacao];
         const resposta = respostas[i];
         
         const changeCell = (linha, coluna) => {
@@ -65,9 +64,8 @@ function colocarNaCruzadinha(correto) {
     const res = resPosition[pos];
 
     const orientacao = res[0];
-            // o +1 é para centralizar
-    const linhaInicial = res[1 + orientacao]+1;
-    const colunaInicial = res[2 - orientacao]+1;
+    const linhaInicial = res[1 + orientacao];
+    const colunaInicial = res[2 - orientacao];
 
     const addCharCell = (linha, coluna, char) => {
         getCell(linha, coluna).innerHTML = char;
@@ -106,5 +104,5 @@ function iniciarJogo(){
     btn_jogar.style.display = 'none'
     div_instrucao.style.display = 'none'
     jogo.style.display = 'flex'
-    mostrarCruzadinha(gerarCruzadinha(25,18))
+    mostrarCruzadinha(gerarCruzadinha(23,16))
 }
