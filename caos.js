@@ -1,20 +1,9 @@
-var respostas   = ['CPU', 'ULA', 'Registradores', 'RAM', 'ROM', 'EPROM', 'FLASH', 'Memória de Massa', 'DMA', 'CS', 'Address Bus', 'Data Bus', 'I5', 'I7', 'Dual Core', 'Quad Core'];
-var resPosition = [[0,0,0]]
+var respostas   = ['CPU', 'ULA', 'REGISTRADORES', 'RAM', 'ROM', 'EPROM', 'FLASH', 'MEMORIADEMASSA', 'DMA', 'CS', 'ADDRESSBUS', 'DATABUS', 'I5', 'I7', 'DUALCORE', 'QUADCORE'];
+var resPosition = [[0,5,6],[0,12,15],[0,6,7],[1,14,5],[0,1,15],[1,7,4],[0,15,15],[1,17,2],[1,2,2],[0,14,16],[1,11,0],[0,8,16],[0,7,17],[1,10,6],[1,21,7],[0,4,0]]
 
 var questao = 0
 
-// TO DO
-
-// Criação da Matriz da cruzadinha
-// Criação de css para os bloquinhos (.block e .block.in)
-// Criação de um array de posição contendo [horizontal ou vertical (0 ou 1), pos, inicio] de cada resposta
-// Transformar a Matriz em cruzadinha
-// Função para verificar se na posição inicio e fim tem a reposta correta
-// ???
-
-
-
-function gerarCruzadinha(coluna, linha, ) {
+function gerarCruzadinha(coluna, linha) {
     var matrix = []
     for (let i = 0; i < linha; i++){
         matrix[i] = []
@@ -25,7 +14,7 @@ function gerarCruzadinha(coluna, linha, ) {
     return matrix
 }
 
-function mostrarCruzadinha(matrix = [[]], resPos = [[]]){
+function mostrarCruzadinha(matrix = [[]]){
     const linha = matrix.length
     const coluna = matrix[0].length
 
@@ -40,42 +29,71 @@ function mostrarCruzadinha(matrix = [[]], resPos = [[]]){
         content += linhaGerada
     }
     cruzadinha.innerHTML = content
-    colocarEspacos()
-}   
+    colocarEspacos(1)
+}
 
-function colocarEspacos(){
-    for(let i = 0; i < resPosition.length; i++){
-        const res = resPosition[i]
-        if(res[0] = 0){
-            [linha, coluna] = [res[1],res[2]]
-        } else {
-            [linha, coluna] = [res[2],res[1]]
-        }
+function colocarEspacos(gap) {
+    for (let i = 0; i < resPosition.length; i++) {
+        const res = resPosition[i];
+        const orientacao = res[0];
+        // o +1 é para centralizar
+        const linhaInicial = res[1 + orientacao]+1;
+        const colunaInicial = res[2 - orientacao]+1;
+        const resposta = respostas[i];
+        
+        const changeCell = (linha, coluna) => {
+            getCell(linha, coluna).classList.add('in');
+        };
 
-        for(let block = coluna; block <= respostas[i].length; block++){
-            getCell(linha, block).classList.add('in')
+        for (let block = 0; block < resposta.length; block++) {
+            if (orientacao === 0) {
+                changeCell(linhaInicial, colunaInicial + block);
+            } else {
+                changeCell(linhaInicial + block, colunaInicial);
+            }
         }
     }
 }
+
 
 function getCell(line, column){
     return cruzadinha.childNodes[line].childNodes[column]
 }
 
-function colocarNaCruzadinha ([orientacao, pos, inicio]){
-    if(orientacao = 0){
+function colocarNaCruzadinha(correto) {
+    const pos = respostas.indexOf(correto);
+    const res = resPosition[pos];
 
+    const orientacao = res[0];
+            // o +1 é para centralizar
+    const linhaInicial = res[1 + orientacao]+1;
+    const colunaInicial = res[2 - orientacao]+1;
+
+    const addCharCell = (linha, coluna, char) => {
+        getCell(linha, coluna).innerHTML = char;
+    };
+
+    for (let block = 0; block < correto.length; block++) {
+        if (orientacao === 0) {
+            addCharCell(linhaInicial, colunaInicial + block, correto[block]);
+        } else {
+            addCharCell(linhaInicial + block, colunaInicial, correto[block]);
+        }
     }
 }
 
-// c 23 l 13
 
 
-function verificar(value){
-
+function verificar(inp){
+    if(respostas.indexOf(inp.value.toUpperCase()) >= 0){
+        colocarNaCruzadinha(inp.value.toUpperCase())
+        inp.value = ''
+    } else {
+        // mostrar erro
+    }
 }
 
 
 function iniciarJogo(){
-    mostrarCruzadinha(gerarCruzadinha(23,13))
+    mostrarCruzadinha(gerarCruzadinha(25,18))
 }

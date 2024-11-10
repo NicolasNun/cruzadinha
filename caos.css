@@ -6,7 +6,7 @@
 body {
     height: 100vh;
     background-size: 100%;
-    background-image: url(Captura\ de\ tela\ 2024-10-11\ 000024.png);
+    background-image: url(background.png);
     background-position: center;
     background-repeat: no-repeat;
     color: white;
@@ -45,6 +45,12 @@ header .container .btn_jogar {
     height: 32px;
     width: 32px;
     background-color: rgb(0, 162, 255);
+    border: 1px solid white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
 }
 
 .block.in {
