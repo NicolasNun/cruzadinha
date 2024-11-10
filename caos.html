@@ -11,12 +11,12 @@
     <header>
         <div class="container">
             <span class="tittle">Cruza Cruza</span>
-            <button class="btn_jogar" onclick="iniciarJogo()">JOGAR</button>
+            <button id="btn_jogar" onclick="iniciarJogo()">JOGAR</button>
         </div>
     </header>
     <article>
         <div class="container">
-            <div class="div_instrucao">
+            <div id="div_instrucao" class="card">
                 <span class="tittle">Instruções:</span>
                 <span class="span_instrucoes">
                     <span class="instrucao">Clique em "Começar o Jogo" para iniciar uma partida</span>
@@ -25,9 +25,13 @@
                     <span class="intrucao">A partida acaba quando as 16 questões forem respondidas</span>
                 </span>
             </div>
-            <div id="cruzadinha"></div>
-            <input type="text" id="inp_resposta">
-            <button onclick="verificar(inp_resposta)">Validar</button>
+            <div id="jogo">
+                <div id="cruzadinha"></div>
+                <div class="validador">
+                    <input type="text" id="inp_resposta">
+                    <button onclick="verificar(inp_resposta)">Validar</button>
+                </div>
+            </div>
         </div>
     </article>
     <footer>

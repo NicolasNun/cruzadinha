@@ -1,5 +1,5 @@
 var respostas   = ['CPU', 'ULA', 'REGISTRADORES', 'RAM', 'ROM', 'EPROM', 'FLASH', 'MEMORIADEMASSA', 'DMA', 'CS', 'ADDRESSBUS', 'DATABUS', 'I5', 'I7', 'DUALCORE', 'QUADCORE'];
-var resPosition = [[0,5,6],[0,12,15],[0,6,7],[1,14,5],[0,1,15],[1,7,4],[0,15,15],[1,17,2],[1,2,2],[0,14,16],[1,11,0],[0,8,16],[0,7,17],[1,10,6],[1,21,7],[0,4,0]]
+var resPosition = [[0,5,6],[0,12,15],[0,6,7],[1,14,5],[0,2,15],[1,7,4],[0,15,15],[1,17,2],[1,2,2],[0,14,16],[1,11,0],[0,8,16],[0,7,17],[1,10,6],[1,21,7],[0,4,0]]
 
 var questao = 0
 
@@ -85,8 +85,16 @@ function colocarNaCruzadinha(correto) {
 
 
 function verificar(inp){
-    if(respostas.indexOf(inp.value.toUpperCase()) >= 0){
-        colocarNaCruzadinha(inp.value.toUpperCase())
+    var respostaSemEspaco = ''
+
+    for (var i = 0; i < inp.value.length; i++) {
+        if (inp.value[i] != ' ') {
+            respostaSemEspaco += inp.value[i].toUpperCase()
+        }
+    }
+
+    if(respostas.indexOf(respostaSemEspaco) >= 0){
+        colocarNaCruzadinha(respostaSemEspaco)
         inp.value = ''
     } else {
         // mostrar erro
@@ -95,5 +103,8 @@ function verificar(inp){
 
 
 function iniciarJogo(){
+    btn_jogar.style.display = 'none'
+    div_instrucao.style.display = 'none'
+    jogo.style.display = 'flex'
     mostrarCruzadinha(gerarCruzadinha(25,18))
 }

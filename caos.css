@@ -57,3 +57,8 @@ header .container .btn_jogar {
     border: 1px solid black;
     background-color: white;
 }
+
+#jogo {
+    display: none;
+    flex-direction: column;
+}
