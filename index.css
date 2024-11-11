@@ -1,0 +1,195 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background-size: 100%;
+  background-image: url(background.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header .container {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3.5px);
+  text-decoration: none;
+}
+
+header .container a {
+  text-decoration: none;
+  color: white;
+}
+
+header .container .tittle {
+  font-size: 3rem;
+}
+
+article .container {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#div_instrucao {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid black;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3.5px);
+  font-size: 2rem;
+  padding: 2%;
+}
+
+#div_instrucao #span_instrucoes {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  border-radius: 20px;
+  font-size: 1.5rem;
+  padding: 1.5%;
+}
+
+#btn_jogar:hover {
+  background-color: transparent;
+  box-shadow: 0 0 20px 10px rgba(255, 0, 0, 0.8);
+  color: white;
+  transition: 0.3s;
+}
+
+#jogo {
+  width: 100%;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#cruzadinha {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.line {
+  display: flex;
+  gap: 2px;
+}
+
+.block {
+  height: 32px;
+  width: 32px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.block.in {
+  border: 1px solid black;
+  background-color: white;
+}
+
+.block.arrow {
+  background: rgba(0, 0, 0, 0.01);
+  backdrop-filter: blur(3.5px);
+  color: yellow;
+}
+
+#jorge {
+  width: 50%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#div_dicas {
+  overflow: auto;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
+  padding: 1%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3.5px);
+  font-size: 1.4rem;
+}
+
+#div_area_de_resposta {
+  height: 7%;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+
+#div_area_de_resposta button {
+  border-radius: 5px;
+}
+
+#div_area_de_resposta button:hover {
+  transition: 0.3s;
+  transform: scale(1.2);
+}
+
+#div_resposta_resultado {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#div_resposta_resultado input {
+  height: 50%;
+}
+
+#span_erro {
+  display: none;
+  color: red;
+  font-size: 1.5rem;
+}
+
+.errado {
+  border: 0;
+  box-shadow: 0 0 10px 10px rgba(255, 0, 0, 0.8);
+}
+
+footer .container {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3.5px);
+}

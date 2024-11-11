@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="caos.css">
+    <script src="caos.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="caos.html">
+                <span class="tittle">Cruza-Cruza</span>
+            </a>
+        </div>
+    </header>
+    <article>
+        <div class="container">
+            <div id="div_instrucao">
+                <span class="tittle">INSTRUÇÕES</span>
+                <span id="span_instrucoes">
+                    <span>Perguntas serão exibidas na parte inferior do quadro</span>
+                    <span>Insira a sua resposta na caixa de texto e clique em "Verificar" para conferir a sua resposta</span>
+                    <span>A partida acaba quando as 16 questões forem respondidas</span>
+                    <span>Clique em "JOGAR" para iniciar uma partida</span>
+                </span>
+                <button id="btn_jogar" onclick="iniciarJogo()">JOGAR</button>
+            </div>
+            <div id="jogo">
+                <div id="cruzadinha"></div>
+                <div id="jorge">
+                    <div id="div_dicas">
+                        <span>
+                            1- O cérebro do computador, responsável por todo o processamento de dados.
+                        </span>
+                        <span>
+                            2- Circuito digital que executa operações lógicas e aritméticas.
+                        </span>
+                        <span>
+                            3- Menor unidade de armazenamento dentro de um processador, utilizado para guardar informações temporárias.
+                        </span>
+                        <span>
+                            4- Memória volátil. É usada para armazenar temporariamente dados e instruções necessários para o processador.
+                        </span>
+                        <span>
+                            5- Memória não volátil de apenas leitura. Contém informações essenciais para o funcionamento do sistema, como instruções de inicialização, firmware, básicas do hardware e outros dados permanentes.
+                        </span>
+                        <span>
+                            6- Memória não volátil de apenas leitura. Cuja principal características é sua capacidade de ser apagada e reprogramada eletricamente.
+                        </span>
+                        <span>
+                            7- Memória não volátil de alta velocidade, tem a capacidade de apagar e programar informações de forma rápida. Utilizada em dispositivos eletrônicos, como computadores, smartphones, câmeras digitais, pen drives e muitos outros dispositivos.
+                        </span>
+                        <span>
+                            8- Memória não volátil, também conhecida como memória secundária. Usada para armazenar informações a longo prazo, como programas, dados, arquivos e outros tipos de informação.
+                        </span>
+                        <span>
+                            9- Circuito eletrônico com um controlador que permite o acesso direto para a memória RAM por outros dispositivos (controladores de disco, placas gráficas, de rede ou de som) sem a necessidade de passar pela CPU.
+                        </span>
+                        <span>
+                            10- Linha de controle que determina as conversas entre dispositivos e o processador selecionando um ou vários chips conectados no mesmo barramento.
+                        </span>
+                        <span>
+                            11- Sistema utilizado para especificar o endereço da memória que o processador quer ler ou escrever. A quantidade de endereços depende da quantidade de bits do mesmo, assim o calculo é 2^bits (ex: 2³² dá 4GB de possiveis endereços).
+                        </span>
+                        <span>
+                            12- Sistema que permite a transferência de dados entre os componentes do computador. Atua como uma "via" onde os dados trafegam de um ponto a outro dentro do sistema, ele é constituído por fios e a largura determina a quantidade de dados que podem ser transferidos simultaneamente, podendo ser de 8, 16, 32 ou 64 bits.
+                        </span>
+                        <span>
+                            13- Produzido pela Intel desde 2009, possui de 2 a 14 nucleos e 4 a 20 threads e até 24MB de cache
+                        </span>
+                        <span>
+                            14- Produzido pela Intel desde 2008, possui de 4 a 24 nucleos e 8 a 32 threads e até 33MB de cache
+                        </span>
+                        <span>
+                            15- Processador que possuí no máximo dois núcleos físicos de processamento. Como o Intel Pentium D, Intel Core 2 Duo, Intel Pentium Dual-Core, Intel Core i3 e Intel Core i5
+                        </span>
+                        <span>
+                            16- Processador que possuí no máximo quatro núcleos físicos de processamento. Como Intel Core 2 Quad, Intel Core i5, Intel Core i7, Xeon E3-1230 v2 e Xeon E5-1620 v2
+                        </span>
+                    </div>
+                    <div id="div_area_de_resposta">
+                        <input type="text" id="inp_resposta">
+                        <button onclick="verificar(inp_resposta)">Validar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <footer>
+        <div class="container">
+            <span>Developed by Nicolas Nunes && Fillipe Coelho</span>
+            <span>RA: 01242010, RA: 01242064</span>
+            <span>1ADS-A</span>
+            <span>2023</span>
+        </div>
+    </footer>
+</body>
+</html>
